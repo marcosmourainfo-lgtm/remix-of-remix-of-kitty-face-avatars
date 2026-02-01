@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🐱 Gat.AI Design System - Fofo e Colorido */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Paleta inspirada nos gatinhos fofos */
+    --background: 45 100% 98%; /* Creme suave */
+    --foreground: 280 30% 20%; /* Roxo escuro suave */
+
+    --card: 0 0% 100%;
+    --card-foreground: 280 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 30% 20%;
+
+    /* Rosa vibrante (cor principal) */
+    --primary: 340 82% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Laranja peach suave */
+    --secondary: 25 95% 75%;
+    --secondary-foreground: 25 50% 25%;
+
+    /* Lavanda suave */
+    --muted: 270 30% 95%;
+    --muted-foreground: 270 15% 45%;
+
+    /* Coral vibrante */
+    --accent: 15 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 30% 88%;
+    --input: 340 30% 88%;
+    --ring: 340 82% 62%;
+
+    --radius: 1rem;
+
+    /* Cores extras para gradientes */
+    --pink-glow: 340 85% 70%;
+    --peach-soft: 25 90% 85%;
+    --lavender-soft: 280 60% 88%;
+    --mint-soft: 160 40% 85%;
+    --yellow-soft: 45 95% 85%;
+
+    /* Gradiente principal */
+    --gradient-primary: linear-gradient(135deg, hsl(340, 82%, 62%), hsl(280, 60%, 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(25, 95%, 75%), hsl(340, 85%, 70%));
+    --gradient-hero: linear-gradient(180deg, hsl(45, 100%, 98%) 0%, hsl(340, 50%, 96%) 100%);
+
+    /* Sombras suaves */
+    --shadow-soft: 0 4px 20px -4px hsl(340 82% 62% / 0.2);
+    --shadow-card: 0 8px 32px -8px hsl(280 30% 20% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 280 30% 20%;
+    --sidebar-primary: 340 82% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 30% 95%;
+    --sidebar-accent-foreground: 280 30% 20%;
+    --sidebar-border: 340 30% 88%;
+    --sidebar-ring: 340 82% 62%;
+  }
+
+  .dark {
+    --background: 280 25% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 280 20% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 280 20% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 340 75% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 15% 18%;
+    --muted-foreground: 280 10% 60%;
+
+    --accent: 15 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 15% 20%;
+    --input: 280 15% 20%;
+    --ring: 340 75% 58%;
+
+    --pink-glow: 340 70% 55%;
+    --peach-soft: 25 60% 45%;
+    --lavender-soft: 280 40% 35%;
+    --mint-soft: 160 30% 35%;
+    --yellow-soft: 45 70% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(340, 75%, 58%), hsl(280, 50%, 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(25, 70%, 55%), hsl(340, 70%, 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(280, 25%, 8%) 0%, hsl(280, 20%, 12%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(340 75% 58% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 280 20% 10%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 340 75% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 15% 18%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 280 15% 20%;
+    --sidebar-ring: 340 75% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-gradient {
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-cute {
+    @apply rounded-2xl bg-card p-6;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+  }
+
+  .card-cute:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -12px hsl(340 82% 62% / 0.25);
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  @keyframes wiggle {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-5deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+  }
+}
+
+/* Animation utilities for auth pages */
+@layer utilities {
+  .animate-float {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out infinite;
+  }
+}
